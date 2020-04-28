@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Net;
+using System.Net.Mail;
 
 namespace TestConsole
 {
@@ -10,6 +8,26 @@ namespace TestConsole
     {
         static void Main(string[] args)
         {
+            MailMessage ms = new MailMessage("gonzyck@gmail.com", "gonzy@yandex.ru");
+            ms.Subject = "Письмо";
+            ms.Body = "Получи письмо и отвали от меня.";
+            ms.IsBodyHtml = false;
+            //ms.Attachments.Add(new Attachment(@"E:\c#\SourceTreeSetup-3.1.3.exe"));
+
+            SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 58);
+            smtpClient.EnableSsl = true;
+            smtpClient.Credentials = new NetworkCredential();
+
+            try
+            {
+                smtpClient.Send(ms);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            Console.ReadKey();
         }
     }
 }
