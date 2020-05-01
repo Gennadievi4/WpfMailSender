@@ -13,7 +13,7 @@ namespace TestWPF
         private void btnSendEmail_Click(object sender, RoutedEventArgs e)
         {
             const string from = "gonzy@yandex.ru";
-            const string to = "gonzyck@gmail.com";
+            const string to = "9lilys@mail.ru";
 
             const string server_adress = "smtp.yandex.ru";
             const int server_port = 587;
