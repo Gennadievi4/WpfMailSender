@@ -98,7 +98,7 @@
                     <GroupBox Grid.Row="1" Header="Получатители писем">
                         <DataGrid>
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="Id" Binding="{Binding Id, Source={StaticResource Mailers}}" Width="Auto"/>
+                                <DataGridTextColumn Header="Id" Binding="{Binding Id, Source={StaticResource Mailers}}"/>
                             </DataGrid.Columns>
                         </DataGrid>
                         <!--<DataGrid ItemsSource="{x:Static data:DBClass.Emails}" AutoGenerateColumns="False" CanUserReorderColumns="False" IsReadOnly="True">
