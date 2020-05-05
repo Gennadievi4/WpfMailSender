@@ -143,6 +143,7 @@
                     <TextBlock Text="Тело письма" Width="100" Height="20" 
                                VerticalAlignment="Bottom" HorizontalAlignment="Right" Foreground="Black" TextAlignment="Center" Margin="0,0,135,120"/>
                     <TextBox Name="msgBody" Width="100" Height="100" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,135,10" TextWrapping="Wrap"></TextBox>
+                    <ToolBarTray Height="65" Width="Auto" Margin="0,59,0,220"/>
                 </Grid>
             </TabItem>
         </TabControl>
