@@ -29,16 +29,13 @@
         <TabControl>
             <TabItem Header="Рассылка" ToolTip="Управление рассылкой">
                 <Grid>
-                    <Grid.Resources>
-                        <data:Recipient x:Key="Mailers"/>
-                    </Grid.Resources>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <ToolBarTray>
                         <ToolBar Header="Отправители">
-                            <ComboBox Width="150" ItemsSource="{x:Static data:TestData.senders}" DisplayMemberPath="Name" SelectedIndex="0"></ComboBox>
+                            <ComboBox Width="150" ItemsSource="{x:Static data:TestData.senders}" DisplayMemberPath="Name" SelectedIndex="0" Name="SendersList"></ComboBox>
                             <Button ToolTip="Добавить">
                                 <fa:ImageAwesome Height="16" Icon="Plus" Foreground="Green"/>
                             </Button>
@@ -50,7 +47,7 @@
                             </Button>
                         </ToolBar>
                         <ToolBar Header="Сервера" Band="1">
-                            <ComboBox Width="150" ItemsSource="{x:Static data:TestData.servers}" SelectedIndex="0">
+                            <ComboBox Width="150" ItemsSource="{x:Static data:TestData.servers}" SelectedIndex="0" Name="ServersList">
                                 <ComboBox.ItemTemplate>
                                     <DataTemplate DataType="entities:Server">
                                         <StackPanel Orientation="Horizontal">
@@ -96,19 +93,28 @@
                         </ToolBar>
                     </ToolBarTray>
                     <GroupBox Grid.Row="1" Header="Получатители писем">
-                        <DataGrid>
-                            <DataGrid.Columns>
-                                <DataGridTextColumn Header="Id" Binding="{Binding Id, Source={StaticResource Mailers}}"/>
-                            </DataGrid.Columns>
-                        </DataGrid>
-                        <!--<DataGrid ItemsSource="{x:Static data:DBClass.Emails}" AutoGenerateColumns="False" CanUserReorderColumns="False" IsReadOnly="True">
+                        <DataGrid ItemsSource="{x:Static data:TestData.recipients}" 
+                                  AutoGenerateColumns="False" 
+                                  Name="RecipientsList"
+                                  CanUserReorderColumns="False" 
+                                  IsReadOnly="True"
+                                  CanUserAddRows="False"
+                                  HeadersVisibility="Column"
+                                  VerticalGridLinesBrush="Gray"
+                                  GridLinesVisibility="Vertical"
+                                  AlternatingRowBackground="Gray">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="#" Binding="{Binding Id}" Width="Auto"/>
                                 <DataGridTextColumn Header="Имя" Binding="{Binding Name}" Width="Auto"/>
-                                <DataGridTextColumn Header="Адрес" Binding="{Binding Adress}" Width="Auto"/>
-                                <DataGridTextColumn Header="Описание" Binding="{Binding Discription}" Width="Auto"/>
+                                <DataGridTextColumn Header="Адрес" Binding="{Binding Adress}" Width="*"/>
                             </DataGrid.Columns>
-                        </DataGrid>-->
+                            <!--<DataGrid.Columns>
+                                <DataGridTextColumn Header="#" Binding="{Binding Id}" Width="Auto"/>
+                                <DataGridTextColumn Header="Имя" Binding="{Binding Name}" Width="Auto"/>
+                                <DataGridTextColumn Header="Адрес" Binding="{Binding Adress}" Width="Auto"/>
+                                <DataGridTextColumn Header="Описание" Binding="{Binding Discription}" Width="*"/>
+                            </DataGrid.Columns>-->
+                        </DataGrid>
                     </GroupBox>
                 </Grid>
             </TabItem>
@@ -119,13 +125,13 @@
                             <TextBlock Text="Календарь" TextAlignment="Center"/>
                             <Calendar/>
                             <StackPanel Margin="5">
-                                <Button HorizontalContentAlignment="Stretch">
+                                <Button HorizontalContentAlignment="Stretch" Click="">
                                     <DockPanel Margin="20,0">
                                         <fa:ImageAwesome Height="16" Icon="ClockOutline" DockPanel.Dock="Right"/>
                                         <TextBlock Text="Запланировать" HorizontalAlignment="Center"/>
                                     </DockPanel>
                                 </Button>
-                                <Button HorizontalContentAlignment="Stretch" Margin="0,2,0,0">
+                                <Button HorizontalContentAlignment="Stretch" Margin="0,2,0,0" Click="OnSendButtonClick">
                                     <DockPanel Margin="20,0">
                                         <fa:ImageAwesome Height="16" Icon="Send" DockPanel.Dock="Right"/>
                                         <TextBlock Text="Отправить" HorizontalAlignment="Center"></TextBlock>
@@ -193,10 +199,10 @@
                     <GroupBox Header="Выбранное письмо" Grid.Column="1">
                         <DockPanel>
                             <GroupBox Header="Тема письма" DockPanel.Dock="Top">
-                                <TextBox Text="Текст заголовка письма"></TextBox>
+                                <TextBox Text="Текст заголовка письма" Name="MailHeader"></TextBox>
                             </GroupBox>
                             <GroupBox Header="Тело письма">
-                                <TextBox Text="Текст тела письма" AcceptsReturn="True" TextWrapping="Wrap"/>
+                                <TextBox Text="Текст тела письма" AcceptsReturn="True" TextWrapping="Wrap" Name="MailText"/>
                             </GroupBox>
                         </DockPanel>
                     </GroupBox>

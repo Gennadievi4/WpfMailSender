@@ -30,9 +30,9 @@ namespace MailSender.lib.Data
 		
     #region Определения метода расширяемости
     partial void OnCreated();
-    partial void InsertRecipient(Recipient instance);
-    partial void UpdateRecipient(Recipient instance);
-    partial void DeleteRecipient(Recipient instance);
+    partial void InsertRecipients(Recipients instance);
+    partial void UpdateRecipients(Recipients instance);
+    partial void DeleteRecipients(Recipients instance);
     #endregion
 		
 		public Emails() : 
@@ -65,17 +65,17 @@ namespace MailSender.lib.Data
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<Recipient> Recipient
+		public System.Data.Linq.Table<Recipients> Recipients
 		{
 			get
 			{
-				return this.GetTable<Recipient>();
+				return this.GetTable<Recipients>();
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Recipients")]
-	public partial class Recipient : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class Recipients : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -102,7 +102,7 @@ namespace MailSender.lib.Data
     partial void OnDescriptionChanged();
     #endregion
 		
-		public Recipient()
+		public Recipients()
 		{
 			OnCreated();
 		}

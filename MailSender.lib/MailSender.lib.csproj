@@ -49,6 +49,7 @@
       <DependentUpon>Emails.dbml</DependentUpon>
     </Compile>
     <Compile Include="Data\TestData.cs" />
+    <Compile Include="Entities\Recipient.cs" />
     <Compile Include="Entities\Sender.cs" />
     <Compile Include="Entities\Server.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -57,6 +58,8 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Services\MailSender.cs" />
+    <Compile Include="Service\TestEncoder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -76,5 +79,6 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
