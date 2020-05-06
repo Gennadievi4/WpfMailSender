@@ -36,7 +36,7 @@
                     <ToolBarTray>
                         <ToolBar Header="Отправители">
                             <ComboBox Width="150" ItemsSource="{x:Static data:TestData.senders}" DisplayMemberPath="Name" SelectedIndex="0" Name="SendersList"></ComboBox>
-                            <Button ToolTip="Добавить">
+                            <Button ToolTip="Добавить" Name="btnAdd" Click="OnAddBtnClick">
                                 <fa:ImageAwesome Height="16" Icon="Plus" Foreground="Green"/>
                             </Button>
                             <Button ToolTip="Редактировать">
@@ -125,7 +125,7 @@
                             <TextBlock Text="Календарь" TextAlignment="Center"/>
                             <Calendar/>
                             <StackPanel Margin="5">
-                                <Button HorizontalContentAlignment="Stretch" Click="">
+                                <Button HorizontalContentAlignment="Stretch" Click="OnSendButtonClick">
                                     <DockPanel Margin="20,0">
                                         <fa:ImageAwesome Height="16" Icon="ClockOutline" DockPanel.Dock="Right"/>
                                         <TextBlock Text="Запланировать" HorizontalAlignment="Center"/>

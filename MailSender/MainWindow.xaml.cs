@@ -19,8 +19,21 @@ namespace MailSender
 
             if (recipient is null || server is null || senders is null) return;
 
-            var mail_sender = new lib.Services.DebugMailSender(server.Adress, server.Port, server.UseSSL, server.LogIn, server.Password.DeCode());
+            var mail_sender = new DebugMailSender(server.Adress, server.Port, server.UseSSL, server.LogIn, server.Password.DeCode());
             mail_sender.Send(MailHeader.Text, MailText.Text, senders.Adress, recipient.Adress);
+        }
+
+        private void OnAddBtnClick(object sender, RoutedEventArgs e)
+        {
+            var senders = SendersList.SelectedItem as Sender;
+            if (senders is null) return;
+
+            var dialog = new SenderEditor(senders);
+
+            if (dialog.ShowDialog() != true) return;
+
+            senders.Name = dialog.NameValue;
+            senders.Adress = dialog.AdressValue;
         }
     }
 }
