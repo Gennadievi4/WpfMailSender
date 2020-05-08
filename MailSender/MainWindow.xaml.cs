@@ -13,14 +13,14 @@ namespace MailSender
 
         private void OnSendButtonClick(object sender, RoutedEventArgs e)
         {
-            var recipient = RecipientsList.SelectedItem as Recipient;
-            var server = ServersList.SelectedItem as Server;
-            var senders = SendersList.SelectedItem as Sender;
+            //var recipient = RecipientsList.SelectedItem as Recipient;
+            //var server = ServersList.SelectedItem as Server;
+            //var senders = SendersList.SelectedItem as Sender;
 
-            if (recipient is null || server is null || senders is null) return;
+            //if (recipient is null || server is null || senders is null) return;
 
-            var mail_sender = new DebugMailSender(server.Adress, server.Port, server.UseSSL, server.LogIn, server.Password.DeCode());
-            mail_sender.Send(MailHeader.Text, MailText.Text, senders.Adress, recipient.Adress);
+            //var mail_sender = new DebugMailSender(server.Adress, server.Port, server.UseSSL, server.LogIn, server.Password.DeCode());
+            //mail_sender.Send(MailHeader.Text, MailText.Text, senders.Adress, recipient.Adress);
         }
 
         private void OnAddBtnClick(object sender, RoutedEventArgs e)
