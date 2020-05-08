@@ -7,9 +7,10 @@
         xmlns:data="clr-namespace:MailSender.lib.Data;assembly=MailSender.lib"
         xmlns:l="clr-namespace:MailSender"
         mc:Ignorable="d"
-        Title="Главное окно" 
+        Title="{Binding Title}" 
         Height="450" 
-        Width="800">
+        Width="800"
+        DataContext="{Binding Main, Source={StaticResource Locator}}">
     <DockPanel>
         <Menu DockPanel.Dock="Top" BorderThickness="1" BorderBrush="Black" Margin="1">
             <MenuItem Header="Файл">

@@ -52,6 +52,7 @@
     <Compile Include="Entities\Recipient.cs" />
     <Compile Include="Entities\Sender.cs" />
     <Compile Include="Entities\Server.cs" />
+    <Compile Include="MVVM\ViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
