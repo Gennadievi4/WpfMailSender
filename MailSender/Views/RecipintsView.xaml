@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MailSender.Views"
              mc:Ignorable="d" 
+             DataContext="{Binding Main, Source={StaticResource Locator}}"
              d:DesignHeight="450" d:DesignWidth="800">
     <DockPanel Margin="3">
         <TextBlock Text="Получатели сообщений" HorizontalAlignment="Center" DockPanel.Dock="Top" FontWeight="Bold"/>
@@ -12,8 +13,10 @@
             <TextBlock Margin="0, 0, 5, 0">Фильтр:</TextBlock>
             <TextBox></TextBox>
         </DockPanel>
-        <Button DockPanel.Dock="Bottom" HorizontalAlignment="Center" Margin="0, 5, 0, 10" Padding="10,0">Обновить</Button>
-        <DataGrid ItemsSource="{Binding Main.Recipints, Source={StaticResource Locator}}"
+        <Button DockPanel.Dock="Bottom" HorizontalAlignment="Center" Margin="0, 5, 0, 10" Padding="10,0"
+                Command="{Binding LoadRecipientsDataCommand}">Обновить</Button>
+        <DataGrid ItemsSource="{Binding Recipients}"
+                  SelectedItem="{Binding SelectedRecipient}"
             AutoGenerateColumns="False" 
             Name="RecipientsList"
             CanUserReorderColumns="False" 
@@ -24,7 +27,7 @@
             GridLinesVisibility="Vertical"
             AlternatingRowBackground="Gray">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="#" Binding="{Binding Id}" Width="Auto"/>
+                <DataGridTextColumn Header="#" Binding="{Binding ID}"/>
                 <DataGridTextColumn Header="Имя" Binding="{Binding Name}" Width="Auto"/>
                 <DataGridTextColumn Header="Адрес" Binding="{Binding Adress}" Width="*"/>
             </DataGrid.Columns>
