@@ -10,6 +10,7 @@ namespace MailSender.ViewModel
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
             var services = SimpleIoc.Default;
+
             services.Register<MainViewModel>();
             services.Register<RecipientsManager>();
             services.Register<RecipientStoreInMemory>();

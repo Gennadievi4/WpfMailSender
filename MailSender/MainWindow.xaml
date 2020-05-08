@@ -5,12 +5,13 @@
         xmlns:fa="http://schemas.fontawesome.io/icons/"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:data="clr-namespace:MailSender.lib.Data;assembly=MailSender.lib"
+        xmlns:view="clr-namespace:MailSender.Views"
         xmlns:l="clr-namespace:MailSender"
         mc:Ignorable="d"
         Title="{Binding Title}" 
         Height="450" 
         Width="800"
-        DataContext="{Binding Main, Source={StaticResource Locator}}">
+        DataContext="{Binding Main, Source={StaticResource Locator}}" Background="White">
     <DockPanel>
         <Menu DockPanel.Dock="Top" BorderThickness="1" BorderBrush="Black" Margin="1">
             <MenuItem Header="Файл">
@@ -94,28 +95,7 @@
                         </ToolBar>
                     </ToolBarTray>
                     <GroupBox Grid.Row="1" Header="Получатители писем">
-                        <DataGrid ItemsSource="{Binding Recipints}" 
-                                  AutoGenerateColumns="False" 
-                                  Name="RecipientsList"
-                                  CanUserReorderColumns="False" 
-                                  IsReadOnly="True"
-                                  CanUserAddRows="False"
-                                  HeadersVisibility="Column"
-                                  VerticalGridLinesBrush="Gray"
-                                  GridLinesVisibility="Vertical"
-                                  AlternatingRowBackground="Gray">
-                            <DataGrid.Columns>
-                                <DataGridTextColumn Header="#" Binding="{Binding Id}" Width="Auto"/>
-                                <DataGridTextColumn Header="Имя" Binding="{Binding Name}" Width="Auto"/>
-                                <DataGridTextColumn Header="Адрес" Binding="{Binding Adress}" Width="*"/>
-                            </DataGrid.Columns>
-                            <!--<DataGrid.Columns>
-                                <DataGridTextColumn Header="#" Binding="{Binding Id}" Width="Auto"/>
-                                <DataGridTextColumn Header="Имя" Binding="{Binding Name}" Width="Auto"/>
-                                <DataGridTextColumn Header="Адрес" Binding="{Binding Adress}" Width="Auto"/>
-                                <DataGridTextColumn Header="Описание" Binding="{Binding Discription}" Width="*"/>
-                            </DataGrid.Columns>-->
-                        </DataGrid>
+                        <view:RecipintsView/>
                     </GroupBox>
                 </Grid>
             </TabItem>
