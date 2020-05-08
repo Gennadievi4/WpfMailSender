@@ -94,7 +94,7 @@
                         </ToolBar>
                     </ToolBarTray>
                     <GroupBox Grid.Row="1" Header="Получатители писем">
-                        <DataGrid ItemsSource="{x:Static data:TestData.recipients}" 
+                        <DataGrid ItemsSource="{Binding Recipints}" 
                                   AutoGenerateColumns="False" 
                                   Name="RecipientsList"
                                   CanUserReorderColumns="False" 

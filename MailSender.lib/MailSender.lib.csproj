@@ -60,6 +60,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Services\MailSender.cs" />
+    <Compile Include="Services\RecipientsManager.cs" />
+    <Compile Include="Services\RecipientStoreInMemory.cs" />
     <Compile Include="Service\TestEncoder.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -80,6 +82,8 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Services\Interfaces\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
