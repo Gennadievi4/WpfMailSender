@@ -67,11 +67,17 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Services\Interfaces\IDataStore.cs" />
+    <Compile Include="Services\Interfaces\IMailingStore.cs" />
+    <Compile Include="Services\Interfaces\IMaleStore.cs" />
     <Compile Include="Services\Interfaces\IRecipientManager.cs" />
     <Compile Include="Services\Interfaces\IRecipientStore.cs" />
+    <Compile Include="Services\Interfaces\ISenderStore.cs" />
+    <Compile Include="Services\Interfaces\IServerStore.cs" />
+    <Compile Include="Services\Interfaces\IShedullerTaskStore.cs" />
     <Compile Include="Services\MailSender.cs" />
     <Compile Include="Services\RecipientsManager.cs" />
-    <Compile Include="Services\RecipientStoreInMemory.cs" />
+    <Compile Include="Services\InMemory\RecipientStoreInMemory.cs" />
     <Compile Include="Service\TestEncoder.cs" />
   </ItemGroup>
   <ItemGroup>
