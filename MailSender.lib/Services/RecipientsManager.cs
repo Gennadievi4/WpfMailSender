@@ -9,7 +9,7 @@ namespace MailSender.lib.Services
         private IRecipientStore _Store;
 
         public RecipientsManager(IRecipientStore Store) { _Store = Store; }
-        public IEnumerable<Recipient> GetAll() => _Store.Get();
+        public IEnumerable<Recipient> GetAll() => _Store.GetAll();
         public void Add(Recipient recipient)
         {
 
