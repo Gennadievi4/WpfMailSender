@@ -3,7 +3,6 @@
     /// <summary>Почтовый сервер </summary>
     public class Server
     {
-        public int ID { get; set; }
         public string Name { get; set; }
         public string Adress { get; set; }
         public int Port { get; set; }

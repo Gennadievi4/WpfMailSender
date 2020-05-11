@@ -8,16 +8,10 @@
         Title="Отправитель почты" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="45*"/>
+            <RowDefinition Height="374*"/>
         </Grid.RowDefinitions>
-        <Menu Grid.Row="0" HorizontalAlignment="Stretch" Height="15" >
-            <MenuItem Header="Файл" Foreground="Black">
-                <MenuItem Header="Создать"></MenuItem>
-                <MenuItem Header="Открыть"></MenuItem>
-                <MenuItem Header=""></MenuItem>
-            </MenuItem>
-        </Menu>
+        <Menu Grid.RowSpan="1"/>
         <TabControl Grid.Row="1">
             <TabItem Header="Панели комапановки">
                 <TabControl TabStripPlacement="Left">
