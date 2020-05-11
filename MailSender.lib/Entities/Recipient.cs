@@ -1,6 +1,6 @@
 ﻿namespace MailSender.lib.Entities
 {
-    public class Sender
+    public class Recipient
     {
         public int ID { get; set; }
         public string Name { get; set; }

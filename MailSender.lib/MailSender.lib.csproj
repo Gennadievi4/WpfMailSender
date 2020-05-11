@@ -31,6 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
@@ -49,14 +50,23 @@
       <DependentUpon>Emails.dbml</DependentUpon>
     </Compile>
     <Compile Include="Data\TestData.cs" />
+    <Compile Include="Entities\Recipient.cs" />
     <Compile Include="Entities\Sender.cs" />
     <Compile Include="Entities\Server.cs" />
+    <Compile Include="MVVM\LambdaCommand.cs" />
+    <Compile Include="MVVM\ViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Services\Interfaces\IRecipientManager.cs" />
+    <Compile Include="Services\Interfaces\IRecipientStore.cs" />
+    <Compile Include="Services\MailSender.cs" />
+    <Compile Include="Services\RecipientsManager.cs" />
+    <Compile Include="Services\RecipientStoreInMemory.cs" />
+    <Compile Include="Service\TestEncoder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -76,5 +86,6 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

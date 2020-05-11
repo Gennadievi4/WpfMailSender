@@ -5,7 +5,7 @@ namespace MailSender.lib.Data
     public static class DBClass
     {
         private static readonly Emails emails = new Emails();
-        public static IQueryable<Recipient> Emails => from c in emails.Recipient select c;
+        public static IQueryable<Recipients> Emails => from c in emails.Recipients select c;
 
     }
 }
