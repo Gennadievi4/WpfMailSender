@@ -73,6 +73,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Infrastructure\ValidationRules\RegExValidation.cs" />
     <Compile Include="SenderEditor.xaml.cs">
       <DependentUpon>SenderEditor.xaml</DependentUpon>
     </Compile>
