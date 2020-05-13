@@ -13,6 +13,7 @@ namespace MailSender.lib.Services.InMemory
         protected DataStoreInMemory(List<T> Item = null) => _items = Item ?? new List<T>();
         public int Create(T T)
         {
+            if (T is null) throw new ArgumentNullException(nameof(T));
             if (_items.Contains(T)) return T.ID;
             T.ID = _items.Count == 0 ? 1 : _items.Max(x => x.ID) + 1;
             _items.Add(T);

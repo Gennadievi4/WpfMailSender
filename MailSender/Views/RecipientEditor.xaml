@@ -50,7 +50,7 @@
         <TextBlock Grid.Row="1" Grid.Column="0" Text="Name:"></TextBlock>
         <TextBlock Grid.Row="2" Grid.Column="0" Text="Adress:"></TextBlock>
         
-        <TextBox Grid.Row="0" Grid.Column="1" IsReadOnly="False" Text="{Binding SelectedRecipient.ID}"></TextBox>
+        <TextBox Grid.Row="0" Grid.Column="1" IsReadOnly="True" Text="{Binding SelectedRecipient.ID}"></TextBox>
         <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding SelectedRecipient.Name}"></TextBox>
         <TextBox Grid.Row="2" Grid.Column="1">
             <TextBox.Text>
