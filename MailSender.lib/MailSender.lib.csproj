@@ -50,9 +50,15 @@
       <DependentUpon>Emails.dbml</DependentUpon>
     </Compile>
     <Compile Include="Data\TestData.cs" />
+    <Compile Include="Entities\Base\Entity.cs" />
+    <Compile Include="Entities\Base\NamedEntity.cs" />
+    <Compile Include="Entities\Base\PersonEntity.cs" />
+    <Compile Include="Entities\Mail.cs" />
+    <Compile Include="Entities\MailingList.cs" />
     <Compile Include="Entities\Recipient.cs" />
     <Compile Include="Entities\Sender.cs" />
     <Compile Include="Entities\Server.cs" />
+    <Compile Include="Entities\ShedullerTask.cs" />
     <Compile Include="MVVM\LambdaCommand.cs" />
     <Compile Include="MVVM\ViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -61,11 +67,18 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Services\InMemory\DataStoreInMemory.cs" />
+    <Compile Include="Services\Interfaces\IDataStore.cs" />
+    <Compile Include="Services\Interfaces\IMailingStore.cs" />
+    <Compile Include="Services\Interfaces\IMaleStore.cs" />
     <Compile Include="Services\Interfaces\IRecipientManager.cs" />
     <Compile Include="Services\Interfaces\IRecipientStore.cs" />
+    <Compile Include="Services\Interfaces\ISenderStore.cs" />
+    <Compile Include="Services\Interfaces\IServerStore.cs" />
+    <Compile Include="Services\Interfaces\IShedullerTaskStore.cs" />
     <Compile Include="Services\MailSender.cs" />
     <Compile Include="Services\RecipientsManager.cs" />
-    <Compile Include="Services\RecipientStoreInMemory.cs" />
+    <Compile Include="Services\InMemory\RecipientStoreInMemory.cs" />
     <Compile Include="Service\TestEncoder.cs" />
   </ItemGroup>
   <ItemGroup>

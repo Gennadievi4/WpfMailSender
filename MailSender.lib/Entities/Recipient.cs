@@ -1,9 +1,9 @@
-﻿namespace MailSender.lib.Entities
+﻿using MailSender.lib.Entities.Base;
+
+namespace MailSender.lib.Entities
 {
-    public class Recipient
+    public class Recipient : PersonEntity
     {
-        public int ID { get; set; }
-        public string Name { get; set; }
-        public string Adress { get; set; }
+        public override string Name { get; set; }
     }
 }

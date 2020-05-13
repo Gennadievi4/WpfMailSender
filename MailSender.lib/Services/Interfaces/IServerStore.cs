@@ -2,5 +2,5 @@
 
 namespace MailSender.lib.Services.Interfaces
 {
-    public interface IRecipientStore : IDataStore<Recipient> { }
+    public interface IServerStore : IDataStore<Server> { }
 }
