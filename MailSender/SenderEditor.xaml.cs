@@ -6,12 +6,14 @@ namespace MailSender
     {
         public string NameValue { get => txtName.Text; set => txtName.Text = value; }
         public string AdressValue { get => txtAdress.Text; set => txtAdress.Text = value; }
+        private MainWindow _MainWindow;
 
-        public SenderEditor(Sender sender)
+        public SenderEditor(Sender sender, MainWindow mainWindow)
         {
             InitializeComponent();
             NameValue = sender.Name;
             AdressValue = sender.Adress;
+            _MainWindow = mainWindow;
         }
 
         private void OnOkButtonClick(object sender, System.Windows.RoutedEventArgs e)
