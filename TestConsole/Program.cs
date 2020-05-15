@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Net;
 using System.Net.Mail;
-using System.Threading;
 
 namespace TestConsole
 {
@@ -9,10 +8,9 @@ namespace TestConsole
     {
         static void Main(string[] args)
         {
-            var first_thread = new Thread(FirstThreadMethod);
-            first_thread.Start();
-
-            Console.WriteLine("Главный поток завершился!");
+            //ThreadTest.Start();
+            //ThreadPooltest.Start();
+            SynchronizationTest.Start();
             Console.ReadLine();
         }
         public void SendEmails()
@@ -37,15 +35,6 @@ namespace TestConsole
             }
 
             Console.ReadKey();
-        }
-
-        private static void FirstThreadMethod()
-        {
-            while (true)
-            {
-                Console.Title = DateTime.Now.ToString();
-                Thread.Sleep(100);
-            }
-        }
+        }    
     }
 }
