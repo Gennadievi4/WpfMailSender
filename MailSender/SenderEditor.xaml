@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MailSender"
         mc:Ignorable="d"
-        Title="SenderEditor" Height="189.235" Width="344.769">
+        Title="SenderEditor" Height="189.235" Width="344.769"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="CanMinimize">
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>

@@ -28,7 +28,7 @@ namespace MailSender
             var senders = SendersList.SelectedItem as Sender;
             if (senders is null) return;
 
-            var dialog = new SenderEditor(senders);
+            var dialog = new SenderEditor(senders, this);
 
             if (dialog.ShowDialog() != true) return;
 

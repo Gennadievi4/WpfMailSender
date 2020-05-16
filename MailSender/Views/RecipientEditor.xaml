@@ -16,7 +16,7 @@
                     <Setter.Value>
                         <ControlTemplate>
                             <DockPanel>
-                                <TextBlock DockPanel.Dock="Right" Text="!" FontSize="18"
+                                <TextBlock DockPanel.Dock="Right" Text="!!!" FontSize="18"
                                            FontWeight="Bold"
                                            Foreground="Red"
                                            Margin="3, 0"

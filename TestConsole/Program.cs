@@ -8,6 +8,13 @@ namespace TestConsole
     {
         static void Main(string[] args)
         {
+            //ThreadTest.Start();
+            //ThreadPooltest.Start();
+            SynchronizationTest.Start();
+            Console.ReadLine();
+        }
+        public void SendEmails()
+        {
             MailMessage ms = new MailMessage("gonzyck@gmail.com", "gonzy@yandex.ru");
             ms.Subject = "Письмо";
             ms.Body = "Получи письмо и отвали от меня.";
@@ -28,6 +35,6 @@ namespace TestConsole
             }
 
             Console.ReadKey();
-        }
+        }    
     }
 }
