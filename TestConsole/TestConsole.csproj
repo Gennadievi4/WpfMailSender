@@ -48,6 +48,7 @@
     <Compile Include="SynchronizationTest.cs" />
     <Compile Include="ThreadPooltest.cs" />
     <Compile Include="ThreadTest.cs" />
+    <Compile Include="TPLtests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

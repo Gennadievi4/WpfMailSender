@@ -10,7 +10,8 @@ namespace TestConsole
         {
             //ThreadTest.Start();
             //ThreadPooltest.Start();
-            SynchronizationTest.Start();
+            //SynchronizationTest.Start();
+            TPLtests.Start2();
             Console.ReadLine();
         }
         public void SendEmails()
