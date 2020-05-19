@@ -10,7 +10,12 @@ namespace TestConsole
         {
             //ThreadTest.Start();
             //ThreadPooltest.Start();
-            SynchronizationTest.Start();
+            //SynchronizationTest.Start();
+            //TPLtests.Start2();
+            //TaskTest.Start();
+            //TaskTest.StartAsync();
+            TaskTest.StartDataProcessAsync();
+            Console.WriteLine("Главный поток завершился!");
             Console.ReadLine();
         }
         public void SendEmails()

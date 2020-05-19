@@ -152,6 +152,9 @@
                     <ToolBarTray Height="65" Width="Auto" Margin="0,59,0,220"/>
                 </Grid>
             </TabItem>
+            <TabItem Header="TestTask">
+                <local:Tasks/>
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>
