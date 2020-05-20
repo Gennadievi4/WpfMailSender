@@ -1,5 +1,6 @@
 ﻿namespace CodeFitstTest.Migrations
 {
+    using CodeFitstTest.Data.Entities;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -14,10 +15,31 @@
 
         protected override void Seed(CodeFitstTest.Data.TestSongsDBContext context)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method
-            //  to avoid creating duplicate seed data.
+            if (!context.Artists.Any())
+            {
+                context.Artists.AddOrUpdate(
+                    new Artist
+                    {
+                        Name = "Исполнитель 1",
+                    },
+                    new Artist
+                    {
+                        Name = "Исполнитель 2",
+                    },
+                    new Artist
+                    {
+                        Name = "Исполнитель 3",
+                    },
+                    new Artist
+                    {
+                        Name = "Исполнитель 4",
+                    });
+            }
+            if (!context.Destributors.Any())
+            {
+                context.Destributors.Add(new Destributor { Name = "Студия" });
+                context.SaveChanges();
+            }
         }
     }
 }
